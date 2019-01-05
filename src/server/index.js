@@ -1,7 +1,6 @@
 const express = require('express');
 const http = require('http');
 const path = require('path');
-const _ = require('underscore');
 
 // HTTP
 const port = 3000;
