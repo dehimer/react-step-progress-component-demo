@@ -1,7 +1,7 @@
 import React from 'react';
-import StepProgress from './components/StepProgress';
+import StepProgress from 'react-step-progress-component';
 
-export default ({}) => {
-
-}
+export default ({}) => (
+  <StepProgress/>
+)
 
