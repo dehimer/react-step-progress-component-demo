@@ -1,4 +1,6 @@
 import React from 'react'
+import Line from './components/Line'
+import Circle from './components/Circle'
 
 export default ({ step, steps, nextStep, prevStep }) => (
   <div>
@@ -21,10 +23,12 @@ export default ({ step, steps, nextStep, prevStep }) => (
 
           return (
             <span key={idx} onClick={handler}>
-              { isActiveStep ? `[${label}]` : `(${label})` }
+              <Circle>
+                { isActiveStep ? `[${label}]` : label }
+              </Circle>
             </span>
           )
-        })
+        }).reduce((prev, curr, idx) => [prev, <Line key={`line-${idx}`} />, curr])
       }
     </div>
   </div>

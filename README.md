@@ -3,17 +3,11 @@ Simple React component that implements Step Progress Component
 
 
 TODO:
-1. show next/prev buttons
-2. fill component by:
-    props
-        steps``
-        current step num
-        nextstep
-        prevstep
-3. show current step
-4. handle click to next/prev
-5. display line
-6. display circles for every step
-7. handle click on every circle
-8. prettify view of component
-9. ...
+1. display line
+2. display circles for every step
+3. handle click on every circle
+4. prettify view of component
+5. ...
+
+
+ delete styled-components package from repo
