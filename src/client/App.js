@@ -1,7 +1,6 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Step from './components/Step';
-import StepProgress from './components/StepProgress';
 
 export default () => (
   <div>

@@ -6,8 +6,8 @@ TODO:
 1. show next/prev buttons
 2. fill component by:
     props
-        steps count
-        current step
+        steps
+        current step num
         nextstep
         prevstep
 3. show current step
