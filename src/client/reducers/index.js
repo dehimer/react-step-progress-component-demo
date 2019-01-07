@@ -6,13 +6,14 @@ const defaultState = {
 };
 
 export default function rootReducer(state = defaultState, action) {
+  console.log(action);
   const { type } = action;
 
   switch (type) {
     case NEXT_STEP:
     {
       const { steps, step: currentStep } = state;
-      const maxStep = steps.length;
+      const maxStep = steps.length-1;
       const step = Math.min(maxStep, currentStep + 1);
 
       return { ...state, step };

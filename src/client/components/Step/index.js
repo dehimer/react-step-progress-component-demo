@@ -1,12 +1,18 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import { nextStep, prevStep } from "../../actions/steps";
-import StepProgress from 'react-step-progress-component';
+// import StepProgress from 'react-step-progress-component';
+import StepProgress from '../StepProgress';
 
-const Step = ({ step, nextStep, prevStep }) => (
+const Step = ({ step, steps, nextStep, prevStep }) => (
   <div>
     <div>step: {step}</div>
-    <StepProgress/>
+    <StepProgress
+      step={step}
+      steps={steps}
+      nextStep={nextStep}
+      prevStep={prevStep}
+    />
     <div onClick={prevStep}>prev</div>
     <div onClick={nextStep}>next</div>
   </div>
