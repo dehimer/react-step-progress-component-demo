@@ -8,6 +8,7 @@ const defaultState = {
 };
 
 export default function rootReducer(state = defaultState, action) {
+  console.log(action);
   const { type } = action;
 
   switch (type) {

@@ -13,6 +13,8 @@ export default ({ step, steps, nextStep, prevStep, color, inactiveColor }) => {
           const isLastStep = idx === steps.length - 1;
           const isNextStep = (step - idx === -1);
           const isPrevStep = (step - idx === 1);
+          console.log(`isNextStep: ${isNextStep}`);
+          console.log(`isPrevStep: ${isPrevStep}`);
 
           let handler = () => {};
 
@@ -22,7 +24,7 @@ export default ({ step, steps, nextStep, prevStep, color, inactiveColor }) => {
           return (
             <div key={idx} className={isLastStep ? styles.laststep : styles.step}>
               <Label label={label} color={idx <= step ? color : inactiveColor} />
-              <Circle onClick={handler} color={idx <= step ? color : inactiveColor}/>
+              <Circle handler={handler} color={idx <= step ? color : inactiveColor}/>
               <Line isLastStep={isLastStep} color={idx < step ? color : inactiveColor}/>
             </div>
           )
