@@ -7,7 +7,4 @@ then
 ```npm start```
 
 Demo page available on: http://localhost:3000
- 
 
-TODO:
-1. Tests
