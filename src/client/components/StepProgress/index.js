@@ -21,9 +21,18 @@ export default ({ step, steps, nextStep, prevStep, color, inactiveColor }) => {
 
           return (
             <div key={idx} className={isLastStep ? styles.laststep : styles.step}>
-              <Label label={label} color={idx <= step ? color : inactiveColor} />
-              <Circle handler={handler} color={idx <= step ? color : inactiveColor}/>
-              <Line isLastStep={isLastStep} color={idx < step ? color : inactiveColor}/>
+              <Label
+                label={label}
+                color={idx <= step ? color : inactiveColor}
+              />
+              <Circle
+                handler={handler}
+                color={idx <= step ? color : inactiveColor}
+              />
+              <Line
+                isLastStep={isLastStep}
+                color={idx < step ? color : inactiveColor}
+              />
             </div>
           )
         })
