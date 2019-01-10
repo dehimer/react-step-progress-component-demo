@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import { nextStep, prevStep } from "../../actions/steps";
-// import StepProgress from 'react-step-progress-component';
-import StepProgress from '../StepProgress';
+import StepProgress from 'react-step-progress-component';
+// import StepProgress from '../StepProgress';
 import styles from './index.css'
 import styled, { css } from 'styled-components'
 
