@@ -3,10 +3,7 @@ import { NEXT_STEP, PREV_STEP } from "../constants/steps";
 const defaultState = {
   step: 0,
   steps: ['Design', 'Build', 'Launch'],
-  theme: {
-    color: '#4858d7',
-    thickness: 10,
-  }
+  color: '#4858d7',
 };
 
 export default function rootReducer(state = defaultState, action) {
