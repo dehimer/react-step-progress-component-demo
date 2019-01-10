@@ -1,14 +1,15 @@
 import React from 'react'
-import styled from 'styled-components'
+import styles from "./index.css";
 
-export default ({ color }) => {
-  const Line = styled.div`
-    width: 100%;
-    height: 5px;
-    background-color: ${color};
-  `;
-
-  return ((
-    <Line />
-  ))
+export default ({ color, isLastStep }) => {
+  if (isLastStep) {
+    return null;
+  } else {
+    return (
+      <div
+        className={styles.line}
+        style={{ backgroundColor: color }}
+      />
+    )
+  }
 }

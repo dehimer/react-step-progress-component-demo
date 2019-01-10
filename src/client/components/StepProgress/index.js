@@ -1,18 +1,16 @@
 import React from 'react'
 import Line from './components/Line'
-import styled, {css} from 'styled-components'
+import Circle from './components/Circle'
 import Label from './components/Label'
 
 import styles from './index.css'
 
-export default ({ step, steps, nextStep, prevStep, color }) => {
-  const inactiveColor = '#ccc';
-
+export default ({ step, steps, nextStep, prevStep, color, inactiveColor }) => {
   return (
     <div className={styles.wrapper}>
       {
         steps.map((label, idx) => {
-          const lastStep = idx === steps.length - 1;
+          const isLastStep = idx === steps.length - 1;
           const isNextStep = (step - idx === -1);
           const isPrevStep = (step - idx === 1);
 
@@ -21,24 +19,11 @@ export default ({ step, steps, nextStep, prevStep, color }) => {
           if (isNextStep) handler = nextStep;
           if (isPrevStep) handler = prevStep;
 
-          const line = !lastStep && (
-            <div
-              className={styles.line}
-              style={{
-                backgroundColor: idx < step ? color : inactiveColor,
-              }}
-            />
-          );
-
           return (
-            <div className={lastStep ? styles["last-step"] : styles.step} key={idx}>
+            <div key={idx} className={isLastStep ? styles.laststep : styles.step}>
               <Label label={label} color={idx <= step ? color : inactiveColor} />
-              <div
-                className={styles.circle}
-                onClick={handler}
-                style={{borderColor: idx <= step ? color : inactiveColor}}
-              />
-              { line }
+              <Circle onClick={handler} color={idx <= step ? color : inactiveColor}/>
+              <Line isLastStep={isLastStep} color={idx < step ? color : inactiveColor}/>
             </div>
           )
         })

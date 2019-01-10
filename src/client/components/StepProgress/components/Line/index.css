@@ -1,0 +1,5 @@
+.line {
+    flex: 1;
+    height: 7px;
+    transition: background-color 1s;
+}

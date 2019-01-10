@@ -14,20 +14,7 @@
     user-select: none;
 }
 
-.last-step {
+.laststep {
     composes: step;
     flex-grow: 0;
-}
-
-.circle {
-    flex: 0 0 25px;
-    border: 5px solid black;
-    border-radius: 50%;
-    height: 25px;
-    cursor: pointer;
-}
-
-.line {
-    flex: 1;
-    height: 5px;
 }

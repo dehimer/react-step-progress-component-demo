@@ -2,12 +2,12 @@ import { NEXT_STEP, PREV_STEP } from "../constants/steps";
 
 const defaultState = {
   step: 0,
-  steps: ['Design', 'Build', 'Test', 'Launch'],
+  steps: ['Design', 'Build', 'Launch'],
   color: '#4858d7',
+  inactiveColor: '#ccc'
 };
 
 export default function rootReducer(state = defaultState, action) {
-  console.log(action);
   const { type } = action;
 
   switch (type) {

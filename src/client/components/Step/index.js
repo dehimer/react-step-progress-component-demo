@@ -6,7 +6,7 @@ import StepProgress from '../StepProgress';
 import styles from './index.css'
 import styled, { css } from 'styled-components'
 
-const Step = ({ step, steps, nextStep, prevStep, color }) => {
+const Step = ({ step, steps, nextStep, prevStep, color, inactiveColor }) => {
   const SwitchButton = styled.div`
     color: white;
     background-color: ${color};
@@ -19,20 +19,20 @@ const Step = ({ step, steps, nextStep, prevStep, color }) => {
     ${props =>
       props.disabled &&
       css`
-        background: #ccc;
+        background: ${inactiveColor};
     `};
   `;
 
   return (
     <div className={styles.wrapper}>
       <div className={styles.page}>
-        <div>Step Index: {step}</div>
         <StepProgress
           step={step}
           steps={steps}
           nextStep={nextStep}
           prevStep={prevStep}
           color={color}
+          inactiveColor={inactiveColor}
         />
         <div className={styles.controls}>
           <SwitchButton onClick={prevStep} disabled={step === 0}>Prev</SwitchButton>
@@ -43,7 +43,7 @@ const Step = ({ step, steps, nextStep, prevStep, color }) => {
   )
 };
 
-const mapStateToProps = ({ step, steps, color }) => ({ step, steps, color });
+const mapStateToProps = ({ step, steps, color, inactiveColor }) => ({ step, steps, color, inactiveColor });
 
 const mapDispatchToProps = {
   nextStep, prevStep

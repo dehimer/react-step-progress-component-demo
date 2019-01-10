@@ -1,11 +1,11 @@
 import React from 'react'
-import styles from 'styled-components'
+import styles from './index.css'
 
-export default ({ theme: { color, thickness } }) => {
-  const Circle = styles.div`
-    
-  `;
+export default ({ color }) => {
   return (
-    <Circle />
+    <div
+      className={styles.circle}
+      style={{borderColor: color }}
+    />
   )
 }
