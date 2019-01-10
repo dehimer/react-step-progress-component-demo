@@ -4,7 +4,7 @@ import { nextStep, prevStep } from "../../actions/steps";
 // import StepProgress from 'react-step-progress-component';
 import StepProgress from '../StepProgress';
 import styles from './index.css'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 const Step = ({ step, steps, nextStep, prevStep, theme }) => {
   const { color } = theme;
@@ -17,6 +17,11 @@ const Step = ({ step, steps, nextStep, prevStep, theme }) => {
     padding: 10px;
     cursor: pointer;
     user-select: none;
+    ${props =>
+      props.disabled &&
+      css`
+        background: #ccc;
+    `};
   `;
 
   return (
@@ -31,8 +36,8 @@ const Step = ({ step, steps, nextStep, prevStep, theme }) => {
           theme={theme}
         />
         <div className={styles.controls}>
-          <SwitchButton onClick={prevStep}>Prev</SwitchButton>
-          <SwitchButton onClick={nextStep}>Next</SwitchButton>
+          <SwitchButton onClick={prevStep} disabled={step === 0}>Prev</SwitchButton>
+          <SwitchButton onClick={nextStep} disabled={step === steps.length - 1}>Next</SwitchButton>
         </div>
       </div>
     </div>
