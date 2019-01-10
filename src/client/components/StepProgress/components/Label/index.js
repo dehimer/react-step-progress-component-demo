@@ -1,17 +1,9 @@
 import React from 'react'
-import styled from 'styled-components'
+import styles from './index.css'
 
 
-export default ({ color, label }) => {
-  const Label = styled.div`
-    position: absolute;
-    top: -25px;
-    color: ${color};
-  `;
-
-  return ((
-    <Label>
-      { label }
-    </Label>
-  ))
-}
+export default ({ color, label }) => ((
+  <div className={styles.label} style={{ color }}>
+    { label }
+  </div>
+))
