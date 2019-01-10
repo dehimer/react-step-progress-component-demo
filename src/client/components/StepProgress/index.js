@@ -13,8 +13,6 @@ export default ({ step, steps, nextStep, prevStep, color, inactiveColor }) => {
           const isLastStep = idx === steps.length - 1;
           const isNextStep = (step - idx === -1);
           const isPrevStep = (step - idx === 1);
-          console.log(`isNextStep: ${isNextStep}`);
-          console.log(`isPrevStep: ${isPrevStep}`);
 
           let handler = () => {};
 

@@ -10,5 +10,4 @@ Demo page available on: http://localhost:3000
  
 
 TODO:
-1. Update package on npm
-2. Tests
+1. Tests
