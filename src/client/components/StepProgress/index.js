@@ -1,20 +1,25 @@
 import React from 'react'
 import Line from './components/Line'
 import Circle from './components/Circle'
+import Label from './components/Label'
 
-export default ({ step, steps, nextStep, prevStep }) => (
-  <div>
-    <div>Step Progress</div>
-    <div>
+import styles from './index.css'
+
+export default ({ step, steps, nextStep, prevStep, theme }) => {
+  const { color } = theme;
+
+  return (
+    <div className={styles.wrapper}>
       {
         steps.map((label, idx) => {
-          console.log(`idx: ${idx}`);
-          const isActiveStep = (idx === step);
+          const segmentTheme = {
+            ...theme,
+            color: idx <= step ? color : '#CCC'
+          };
+
 
           const isNextStep = (step - idx === -1);
           const isPrevStep = (step - idx === 1);
-          console.log(`isNextStep: ${isNextStep}`);
-          console.log(`isPrevStep: ${isPrevStep}`);
 
           let handler = () => {};
 
@@ -22,14 +27,14 @@ export default ({ step, steps, nextStep, prevStep }) => (
           if (isPrevStep) handler = prevStep;
 
           return (
-            <span key={idx} onClick={handler}>
-              <Circle>
-                { isActiveStep ? `[${label}]` : label }
-              </Circle>
-            </span>
+            <div key={idx}>
+              <Label label={label} theme={segmentTheme} />
+              <Circle onClick={handler} theme={segmentTheme} />
+              <Line key={`line-${idx}`} theme={segmentTheme} />
+            </div>
           )
-        }).reduce((prev, curr, idx) => [prev, <Line key={`line-${idx}`} />, curr])
+        })
       }
     </div>
-  </div>
-);
+  );
+}

@@ -1,7 +1,11 @@
 import React from 'react'
+import styles from 'styled-components'
 
-export default ({ children }) => (
-  <span>
-    ( { children } )
-  </span>
-)
+export default ({ theme: { color, thickness } }) => {
+  const Circle = styles.div`
+    border: ${thickness}px solid ${color};
+  `;
+  return (
+    <Circle />
+  )
+}
