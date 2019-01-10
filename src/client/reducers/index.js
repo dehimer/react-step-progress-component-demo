@@ -2,7 +2,7 @@ import { NEXT_STEP, PREV_STEP } from "../constants/steps";
 
 const defaultState = {
   step: 0,
-  steps: ['Design', 'Build', 'Launch'],
+  steps: ['Design', 'Build', 'Test', 'Launch'],
   color: '#4858d7',
 };
 
