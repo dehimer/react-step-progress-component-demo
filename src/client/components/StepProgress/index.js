@@ -12,6 +12,7 @@ export default ({ step, steps, nextStep, prevStep, color }) => {
     <div className={styles.wrapper}>
       {
         steps.map((label, idx) => {
+          const lastStep = idx === steps.length - 1;
           const isNextStep = (step - idx === -1);
           const isPrevStep = (step - idx === 1);
 
@@ -20,22 +21,22 @@ export default ({ step, steps, nextStep, prevStep, color }) => {
           if (isNextStep) handler = nextStep;
           if (isPrevStep) handler = prevStep;
 
-          const line = idx !== steps.length - 1 && (
+          const line = !lastStep && (
             <div
               className={styles.line}
               style={{
-                'background-color': idx < step ? color : inactiveColor,
+                backgroundColor: idx < step ? color : inactiveColor,
               }}
             />
           );
 
           return (
-            <div className={styles.step} key={idx}>
+            <div className={lastStep ? styles["last-step"] : styles.step} key={idx}>
               <Label label={label} color={idx <= step ? color : inactiveColor} />
               <div
                 className={styles.circle}
                 onClick={handler}
-                style={{'border-color': idx <= step ? color : inactiveColor}}
+                style={{borderColor: idx <= step ? color : inactiveColor}}
               />
               { line }
             </div>

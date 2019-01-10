@@ -1,15 +1,22 @@
 .wrapper {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     width: 100%;
     max-width: 500px;
 }
 
 .step {
-    flex: 1 0;
+    flex: 1 0 35px;
     display: flex;
     align-items: center;
     position: relative;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+.last-step {
+    composes: step;
+    flex-grow: 0;
 }
 
 .circle {
@@ -18,10 +25,9 @@
     border-radius: 50%;
     height: 25px;
     cursor: pointer;
-    user-select: none;
 }
 
 .line {
-    width: 100%;
+    flex: 1;
     height: 5px;
 }
